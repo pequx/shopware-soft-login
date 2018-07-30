@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+
+    <elements>
+        <element type="boolean" scope="locale" required="true">
+            <name>softLogin</name>
+            <label lang="en">Enable the soft login for all users</label>
+            <label lang="de">Aktivieren den Soft-Login für alle Benutzer?</label>
+            <value>true</value>
+            <description lang="en">Please remember to regenerate user hashes in the backend widget.</description>
+            <description lang="de">Bitte beachten die Benutzerhashes im Backend-Widget neu zu generieren.</description>
+        </element>
+
+        <element type="boolean" scope="locale" required="true">
+            <name>softLoginCategoryRedirection</name>
+            <label lang="en">Enable redirection to a given category after the successful soft login?</label>
+            <label lang="de">Nach dem erfolgreichen Soft-Login die Umleitung auf eine bestimmte Kategorie aktivieren?</label>
+            <value>false</value>
+            <description lang="en">If deactivated, a user will be redirected to the default success login page.</description>
+            <description lang="de">Wenn deaktiviert, wird ein Benutzer zur Standard-Login-Seite weitergeleitet.</description>
+        </element>
+
+        <element type="number" scope="locale" required="true">
+            <name>softLoginCategoryRedirectionDefault</name>
+            <label lang="en">ID of the default soft login redirect category (default: main language root)</label>
+            <label lang="de">ID der standardmässigen Soft-Login Redirect-Kategorie (default: main language root)</label>
+            <value>3</value>
+            <description lang="en">Further adjustments are possible over the plugin backend widget.</description>
+            <description lang="de">Weitere Anpassungen sind über das Plugin-Backend-Widget möglich.</description>
+        </element>
+
+        <element type="boolean" scope="locale" required="true">
+            <name>persistentLogin</name>
+            <label lang="en">Enable a persistent login</label>
+            <label lang="de">Aktivieren eine dauerhafte Anmeldung</label>
+            <value>true</value>
+        </element>
+
+        <element type="interval" scope="locale" required="true">
+            <name>persistentSessionTimeout</name>
+            <label lang="en">Number of seconds to persistent session invalidation</label>
+            <label lang="de">Anzahl der Sekunden bis zur Deaktivierung der persistenten Session</label>
+            <value>120</value>
+        </element>
+
+        <element type="boolean" scope="locale" required="true">
+            <name>softLoginIsPersistent</name>
+            <label lang="en">Is the soft login a persistent login as well? (default: false)</label>
+            <label lang="de">Ist das Soft Login auch ein persistenter Login? (default: false)</label>
+            <value>false</value>
+        </element>
+
+    </elements>
+</config>

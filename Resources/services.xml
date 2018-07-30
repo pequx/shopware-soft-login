@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="soft_login.admin_service" class="SoftLogin\Components\Admin">
+            <argument type="service" id="session"/>
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+        </service>
+
+        <service id="soft_login.subscriber.controller_path" class="SoftLogin\Subscriber\ControllerPath">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="soft_login.subscriber.frontend" class="SoftLogin\Subscriber\Frontend">
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <!--<service id="soft_login.subscriber.backend" class="SoftLogin\Subscriber\Backend">-->
+            <!--<tag name="shopware.event_subscriber" />-->
+        <!--</service>-->
+
+        <!--<service id="soft_login.subscriber.templates" class="SoftLogin\Subscriber\ExtendCustomer">-->
+            <!--<argument type="string">%soft_login.plugin_dir%</argument>-->
+            <!--<argument type="service" id="template"/>-->
+            <!--<tag name="shopware.event_subscriber" />-->
+        <!--</service>-->
+
+        <!--<service id="soft_login.subscriber.templates" class="SoftLogin\Subscriber\ExtendTemplate">-->
+            <!--<argument>%soft_login.plugin_dir%</argument>-->
+            <!--<argument type="service" id="template"/>-->
+            <!--<tag name="shopware.event_subscriber"/>-->
+        <!--</service>-->
+
+        <service id="soft_login.commands.regenerate_hashes" class="SoftLogin\Commands\RegenerateHashesCommand">
+            <tag name="console.command"/>
+        </service>
+
+    </services>
+</container>
