@@ -99,6 +99,7 @@ Ext.define('Shopware.apps.SoftLogin.view.detail.Window', {
         me.saveButton = Ext.create('Ext.button.Button', {
             cls: 'primary',
             name: 'detail-save-button',
+            text: me.saveButtonText,
             listeners: {
                 scope: me,
                 click: function(button, event) {

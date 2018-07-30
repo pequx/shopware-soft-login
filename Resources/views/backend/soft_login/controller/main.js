@@ -38,8 +38,10 @@ Ext.define('Shopware.apps.SoftLogin.controller.Main', {
             values = form.getValues();
 
         if (!record) { return; }
+
         formPanel.setLoading(true);
         record.set('isActive', values.isActive);
+
         form.updateRecord(record);
 
         record.save({
@@ -50,11 +52,16 @@ Ext.define('Shopware.apps.SoftLogin.controller.Main', {
                     record.set(data);
                     Shopware.Notification.createGrowlMessage('Succees', 'trolo');
 
-                    store.load();
-                    formPanel.setLoading(false);
-                    form.loadRecord(record);
-                    detail.destroy();
-                    gridPanel.getStore().reload();
+                    store.load({
+                        callback: function() {
+                            // gridPanel.reconfigure(store);
+                            formPanel.setLoading(false);
+                            form.loadRecord(record);
+                            detail.destroy();
+                            gridPanel.getStore().reload();
+                        }
+                    });
+
                 }else{
                     Shopware.Notification.createGrowlMessage('Error', 'no.');
                 }
@@ -75,11 +82,12 @@ Ext.define('Shopware.apps.SoftLogin.controller.Main', {
             formPanel = detail.formPanel,
             form = formPanel.form,
             record = form.getRecord(),
-            gridPanel = me.mainWindow.gridPanel;
+            gridPanel = me.mainWindow.gridPanel,
+            values = form.getValues();
 
         detail.setLoading(true);
         grid.setLoading(true);
-        
+
         Ext.Ajax.request({
             url: '{url controller=SoftLogin action=regenerateHash}',
             params: {
@@ -93,19 +101,21 @@ Ext.define('Shopware.apps.SoftLogin.controller.Main', {
                     Shopware.Notification.createGrowlMessage('Error', result.message, 'SoftLogin');
                     return;
                 }
-                record.set('loginHash', result.data.loginHash);
-                // detail.setLoading(true);
+                record.set(result.data);
+
                 record.save({
                     callback: function () {
-                        record.set(result.data);
+                        // result.data.isActive = values.isActive;
+                        // record.set(result.data);
                         Shopware.Notification.createGrowlMessage('Succees', 'trolo');
                         form.loadRecord(record);
                         store.load({
                             callback: function() {
-                                // gridPanel.reconfigure(store);
+                                gridPanel.getStore().reload();
                                 grid.setLoading(false);
                                 detail.setLoading(false);
                                 button.setDisabled(false);
+
                             }
                         });
                     }
