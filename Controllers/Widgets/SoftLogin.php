@@ -53,9 +53,9 @@ class Shopware_Controllers_Widgets_SoftLogin extends Enlight_Controller_Action i
         $this->config = Shopware()->Container()
             ->get('shopware.plugin.cached_config_reader')
             ->getByPluginName('SoftLogin');
-        $this->View()->addTemplateDir(
-            $this->container->getParameter('soft_login.view_dir')
-        );
+//        $this->View()->addTemplateDir(
+//            $this->container->getParameter('soft_login.view_dir')
+//        );
 
         parent::preDispatch();
     }

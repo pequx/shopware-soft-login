@@ -57,7 +57,7 @@ class Frontend implements SubscriberInterface
     }
 
     /**
-     * Handler for soft login.
+     * Handler for soft login and hash regeneration after password recovery.
      *
      * @param \Enlight_Event_EventArgs $args
      */

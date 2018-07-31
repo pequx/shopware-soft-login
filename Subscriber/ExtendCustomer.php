@@ -33,6 +33,9 @@ class ExtendCustomer implements SubscriberInterface
         ];
     }
 
+    /**
+     * @param \Enlight_Event_EventArgs $args
+     */
     public function onCustomerDispatch(\Enlight_Event_EventArgs $args)
     {
         /** @var \Shopware_Controllers_Backend_Customer $controller */
@@ -47,18 +50,6 @@ class ExtendCustomer implements SubscriberInterface
         }
         if ($request->getActionName() == 'load') {
             $view->extendsTemplate('backend/soft_login/view/detail/window.js');
-//            $view->extendsTemplate('backend/soft_login/view/detail/base.js');
-//            $view->extendsTemplate('backend/soft_login/controller/soft_login.js');
         }
-//        if ($request->getActionName() === 'getDetail') {
-//            $controller->forward('getDetail', 'softLogin', 'backend', $view->getAssign('data'));
-//
-//            $data = $view->getAssign('data');
-//            $view->clearAssign();
-//            $data += ['loginHash' => 123];
-//            $view->assign(['success' => true, 'data' => $data, 'total' => 1]);
-//
-//            return $view;
-//        }
     }
 }
