@@ -5,6 +5,9 @@ The plugin provides possibility to log in customer using securely generated hash
 Also it adds a persistent session login feature to the current account controller. It's possible to redirect user
 after login to a given page/category/resource.
 
+## Open Issues
+### (1) 
+
 ## User Tests 
 
 `IMPORTANT` Before going to production set the plugin configuration to the production settings. 
