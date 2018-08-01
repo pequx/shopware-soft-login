@@ -50,6 +50,7 @@ Ext.define('Shopware.apps.SoftLogin.view.list.SoftLogin', {
      */
     columnRenderer: function(value, metaData, record) {
         var customer = record.raw.customer;
+
         return this.defaultColumnRenderer(customer);
         /**
          * @todo: i am not able to get email from customer, in the browser console it's possible.

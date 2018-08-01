@@ -98,4 +98,3 @@ Ext.define('Shopware.apps.SoftLogin.view.detail.Window', {
         return me.saveButton;
     },
 });
-//{/block}
