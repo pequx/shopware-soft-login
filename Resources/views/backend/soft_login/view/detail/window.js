@@ -1,25 +1,13 @@
-//{namespace name='backend/soft_login/view/detail'}
-//{block name="backend/soft_login/view/detail/window"}
 Ext.define('Shopware.apps.SoftLogin.view.detail.Window', {
-    /**
-     * @string
-     */
     extend: 'Shopware.window.Detail',
-    /**
-     * @string
-     */
     alias: 'widget.soft-login-detail-window',
-    /**
-     * @string
-     */
     title : 'Soft Login detail',
-    /**
-     * @integer
-     */
     width: 680,
 
     /**
-     * @return { Array }
+     * Configures detail window.
+     *
+     * @return Array
      */
     configure: function() {
         var me = this;

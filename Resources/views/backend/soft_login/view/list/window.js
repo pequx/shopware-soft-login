@@ -6,6 +6,11 @@ Ext.define('Shopware.apps.SoftLogin.view.list.Window', {
     height: 450,
     title: 'SoftLogin',
 
+    /**
+     * Configures list window.
+     *
+     * @return Array
+     */
     configure: function() {
         return {
             listingGrid: 'Shopware.apps.SoftLogin.view.list.SoftLogin',

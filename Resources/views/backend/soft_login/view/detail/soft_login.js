@@ -6,6 +6,11 @@ Ext.define('Shopware.apps.SoftLogin.view.detail.SoftLogin', {
     record: 'Shopware.apps.SoftLogin.model.SoftLogin',
     padding: 10,
 
+    /**
+     * Configures model container.
+     *
+     * @return Array
+     */
     configure: function() {
         return {
             controller: 'SoftLogin',

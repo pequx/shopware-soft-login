@@ -5,6 +5,11 @@ Ext.define('Shopware.apps.SoftLogin.view.list.SoftLogin', {
     alias:  'widget.soft-login-listing-grid',
     region: 'center',
 
+    /**
+     * Configures panel.
+     *
+     * @return Array
+     */
     configure: function() {
         return {
             detailWindow: 'Shopware.apps.SoftLogin.view.detail.Window',
@@ -14,6 +19,11 @@ Ext.define('Shopware.apps.SoftLogin.view.list.SoftLogin', {
         };
     },
 
+    /**
+     * Creates the columns for the grid panel.
+     *
+     * @return Array
+     */
     createColumns: function() {
         var me = this,
             columns = me.callParent(arguments);
@@ -31,12 +41,19 @@ Ext.define('Shopware.apps.SoftLogin.view.list.SoftLogin', {
         return columns;
     },
 
+    /**
+     * Renderer function of the customer group column.
+     *
+     * @param value
+     * @param metaData
+     * @param record Ext.data.Model
+     */
     columnRenderer: function(value, metaData, record) {
-        var store = record.getCustomerStore,
-            result = store.data.items[0].data;
-        // store.getProxy().extraParams = { customerId: record.get('customerId') };
-
-        return this.defaultColumnRenderer(result.email);
+        var customer = record.raw.customer;
+        return this.defaultColumnRenderer(customer);
+        /**
+         * @todo: i am not able to get email from customer, in the browser console it's possible.
+         */
     },
 
     /**

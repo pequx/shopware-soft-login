@@ -4,6 +4,11 @@ Ext.define('Shopware.apps.SoftLogin.view.detail.Customer', {
     extend: 'Shopware.model.Container',
     alias: 'widget.soft-login-view-detail-customer',
 
+    /**
+     * Configures model container.
+     *
+     * @return Array
+     */
     configure: function() {
         return {
             fieldAlias: 'customer',
