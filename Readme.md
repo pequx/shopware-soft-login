@@ -54,24 +54,26 @@ After `130 seconds` reload the page.
 Yo u should be logged out and see a default home page.
 
 ### Case 5 – Login hash regeneration after password recovery `FRONT-END` `ACCOUNT`
--
-In the [ BACKEND ]>[ KUNDEN ]>[ SOFT LOGIN ] select previously created user. Copy the email and login hash.
+
+In the `BACKEND`>`KUNDEN`>`SOFT LOGIN` select previously created user. Copy the email and login hash.
 Close the window. 
-In the [ FRONT-END ], at the [ ACCOUNT ] page click [ Passwort vergessen? ] and enter the email. Click [ E-MAIL SENDEN ].
+In the `FRONT-END`, at the `ACCOUNT` page click `Passwort vergessen?` and enter the email. Click `E-MAIL SENDEN`.
 You should see a default response page. 
-In the [ BACKEND ] click on the refresh icon the the bottom. Previously selected user should have a new login hash. Enter the edit mode. The hash should be the same as on the list.
+In the `BACKEND` click on the refresh icon the the bottom. Previously selected user should have a new login hash. 
+Enter the edit mode. The hash should be the same as on the list.
 
 ### Case 6 – Login hash regeneration after password reset `BACKEND` `KUNDEN`
 
-In the [ BACKEND ]>[ KUNDEN ]>[ SOFT LOGIN ] select previously created user. Copy the email and login hash.
-In the In the [ BACKEND ]>[ KUNDEN ]>[ KUNDEN ] select in the edit mode a previously created user. Click on the yellow key icon next to a [ PASSWORT ].
-Click [ SPEICHERN ]. Close the module.
-In the [ BACKEND ]>[ KUNDEN ]>[ SOFT LOGIN ] click the refresh icon on the bottom. You should see the previously created user has a new login hash.
+In the `BACKEND`>`KUNDEN`>`SOFT LOGIN` select previously created user. Copy the email and login hash.
+In the In the `BACKEND`>`KUNDEN`>`KUNDEN` select in the edit mode a previously created user. 
+Click on the yellow key icon next to a `PASSWORT`.
+Click `SPEICHERN`. Close the module. In the `BACKEND`>`KUNDEN`>`SOFT LOGIN` click the refresh icon on the bottom. 
+You should see the previously created user has a new login hash.
 Close the window.	
 
 ### Case 7 – Login hash regeneration after adding a new customer `BACKEND` `KUNDEN`
 
-In the In the [ BACKEND ]>[ KUNDEN ]>[ ANLEGEN ] add a new customer with the following data:
+In the In the `BACKEND`>`KUNDEN`>`ANLEGEN` add a new customer with the following data:
 customer123@muster.com 
 Perfect Hair Kunden
 [...]
