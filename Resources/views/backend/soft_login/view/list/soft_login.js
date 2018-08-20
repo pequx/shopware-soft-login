@@ -21,7 +21,7 @@ Ext.define('Shopware.apps.SoftLogin.view.list.SoftLogin', {
         var columnEmail = {
             xtype: 'gridcolumn',
             header: 'E-mail',
-            renderer: me.columnRenderer,
+            renderer: me.emailColumnRenderer,
             sortable: true,
             dataIndex: 'email'
         };
@@ -31,20 +31,26 @@ Ext.define('Shopware.apps.SoftLogin.view.list.SoftLogin', {
         return columns;
     },
 
-    columnRenderer: function(value, metaData, record) {
-        var store = record.getCustomerStore,
-            result = store.data.items[0].data;
-        // store.getProxy().extraParams = { customerId: record.get('customerId') };
+    // columnRenderer: function(value, metaData, record) {
+    //     var store = record.getCustomerStore && record.getCustomerStore.first();
+    //     var result = store.get('email');
+    //     // store.getProxy().extraParams = { customerId: record.get('customerId') };
+    //
+    //     return this.defaultColumnRenderer(result);
+    // },
 
-        return this.defaultColumnRenderer(result.email);
-    },
+    // /**
+    //  * @param value
+    //  * @returns string
+    //  */
+    // defaultColumnRenderer: function (value) {
+    //     return value;
+    // },
 
-    /**
-     * @param value
-     * @returns string
-     */
-    defaultColumnRenderer: function (value) {
-        return value;
-    },
+    emailColumnRenderer: function (value, meta, record) {
+        var customer = record.getCustomerStore && record.getCustomerStore.first();
+        console.log(customer);
+        return customer.get('email');
+    }
 });
 //{/block}

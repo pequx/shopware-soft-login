@@ -63,7 +63,7 @@ EOF
             $isRegenerated =
                 $result['insertCount'] <= 1 && $result['deleteCount'] <= 1  &&
                 $result['insertCount'] >= $result['deleteCount'] &&
-                $result['customerId'] >= 0;
+                $result['customerId'] >= 1;
             if (!$isRegenerated) {
                 $output->writeln($errorPrefix.'<error>Hash for user id '.$userId.' was not regenerated.</error>');
                 continue;

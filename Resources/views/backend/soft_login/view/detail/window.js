@@ -51,7 +51,8 @@ Ext.define('Shopware.apps.SoftLogin.view.detail.Window', {
              * @param { Ext.grid.Panel } view
              * @param { Ext.data.Model } record
              */
-            'regenerateHash'
+            'regenerateHash',
+            'save'
         );
     },
 
