@@ -18,7 +18,7 @@ A secure soft login extension for Shopware with additional CLI interface.
 
 ## License
 
-This project is licensed under a proprietary license. Copyright (c) 2018 github.com/pequx. For more information see [License](https://en.wikipedia.org/wiki/Software_license#Proprietary_software_licenses)
+This project is licensed under a proprietary license. Copyright (c) 2018 [github.com/pequx](https://github.com/pequx/). For more information see [License](https://en.wikipedia.org/wiki/Software_license#Proprietary_software_licenses)
 
 ## Acknowledgments
 
